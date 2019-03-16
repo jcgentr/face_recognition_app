@@ -89,7 +89,7 @@ class App extends Component {
 
   onPictureSubmit = () => {
     this.setState({imageURL: this.state.input}); // asynchronous
-    fetch('http://localhost:3000/imageurl', {
+    fetch('https://thawing-dusk-79725.herokuapp.com/imageurl', { // http://localhost:3000/ for local dev
               method: 'post',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
@@ -98,7 +98,7 @@ class App extends Component {
     }).then(response => response.json())
       .then(response => {
         if(response) {
-          fetch('http://localhost:3000/image', {
+          fetch('https://thawing-dusk-79725.herokuapp.com/image', {
               method: 'put',
               headers: {'Content-Type': 'application/json'},
               body: JSON.stringify({
